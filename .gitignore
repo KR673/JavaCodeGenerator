@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+/templates/param_input_backup.txt
+/templates/param_input.txt
