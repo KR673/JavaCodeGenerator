@@ -105,3 +105,4 @@ venv.bak/
 
 /templates/param_input_backup.txt
 /templates/param_input.txt
+*.txt
