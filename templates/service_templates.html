@@ -1,0 +1,39 @@
+package {{ package }}.Service;
+
+import {{ entity_package }};
+import {{ entity_dto_package }};
+
+import java.util.List;
+
+/**
+ * @Description: {{description}}
+ * @author {{author}}
+ * @Date : {{date}}
+ * @version V1.0
+ */
+public interface {{ class_name }}Service {
+
+    /**
+	 * @Description: 列表查询
+	 * @since V1.0
+	 */
+	List<{{ class_name }}Dto> list{{ class_name }}({{ class_name }} param);
+
+    /**
+	 * @Description: 修改
+	 * @since V1.0
+	 */
+	Integer update{{ class_name }}({{ class_name }} param);
+
+    /**
+	 * @Description: 新增
+	 * @since V1.0
+	 */
+	Integer insert{{ class_name }}({{ class_name }} param);
+
+    /**
+	 * @Description: 删除
+	 * @since V1.0
+	 */
+	Integer delete{{ class_name }}(Integer tableId);
+}

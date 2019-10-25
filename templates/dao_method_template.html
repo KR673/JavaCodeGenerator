@@ -1,0 +1,39 @@
+import {{ entity_package }};
+import {{ entity_dto_package }};
+
+import java.util.List;
+
+public interface {{class_name}}Mapper{
+    
+    /**
+     * @Description: 列表查询
+     * @Author WangXiaoBo
+     * @Param
+     * @return
+     */
+    List<{{class_name}}Dto> listTuiGuangFangShi({{class_name}} {{class_name}});
+
+    /**
+     * @Description: 编辑
+     * @Author {{author}}
+     * @Param
+     * @return
+     */
+    Integer updateTuiGuangFangShi({{class_name}} {{small_class_name}});
+
+    /**
+     * @Description: 新增
+     * @Author {{author}}
+     * @Param
+     * @return
+     */
+    Integer insertTuiGuangFangShi({{class_name}} {{small_class_name}});
+
+    /**
+     * @Description: 删除
+     * @Author {{author}}
+     * @Param
+     * @return
+     */
+    Integer deleteTuiGuangFangShi(Integer tableId);
+}

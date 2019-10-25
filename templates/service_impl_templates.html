@@ -1,0 +1,48 @@
+package {{ package }}.ServiceImpl;
+
+import {{ dao_package }};
+import {{ entity_package }};
+import {{ entity_dto_package }};
+package {{ package }}.service.{{ class_name }};
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.util.*;
+
+@Service
+public class {{ class_name }}ServiceImpl implements {{ class_name }}Service {
+
+    @Autowired
+	private {{ class_name }}Mapper {{ small_class_name }}Mapper;
+	
+	@Override
+	public List<{{ class_name }}Dto> list{{ class_name }}({{ class_name }} param) {
+		
+		Integer page = param.getPage();
+		param.setPage(page != null && page > 0 ? page - 1 : 1);
+		
+		List<{{class_name}}Dto> result = {{ small_class_name }}Mapper.list{{ class_name }}param);
+
+        if(CollectionUtils.isEmpty(result)){
+            return new ArrayList<>();
+        }
+		
+		return result;
+	}
+
+	@Override
+	public Integer update{{ class_name }}({{ class_name }} param) {
+		return {{ small_class_name }}Mapper.update{{ class_name }}(param);
+	}
+
+	@Override
+	public Integer insert{{ class_name }}({{ class_name }} param) {
+		return {{ small_class_name }}Mapper.insert{{ class_name }}(param);
+	}
+
+	@Override
+	public Integer delete{{ class_name }}(Integer tableId) {
+		return {{ small_class_name }}Mapper.delete{{ class_name }}(tableId);
+	}
+}
