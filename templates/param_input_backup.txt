@@ -5,7 +5,7 @@
     "entityPackage":"com.abc.user.model.entity",
     "entityDtoPackage":"com.abc.user.model.dto",
 
-    "author":"author",
+    "author":"abc",
     "function":"test",
 
     "column": {
