@@ -55,6 +55,11 @@ def create_class():
             print('--- create controller class')
             create_controller(param)
 
+        dao = request.form.get('dao')
+        if dao and len(dao) >= 1:
+            print('--- create dao class')
+            create_dao(param)
+
     return render_template('create_class.html', msg=msg, file_name=file_name)
 
 def set_param(page_data):
@@ -97,6 +102,10 @@ def create_service_impl(param):
 def create_controller(param):
     s = render_template('controller_templates.html', **param)
     create_java_file(param['class_name'] + 'Controller', param['package'] + '.controller', s)
+
+def create_dao(param):
+    s = render_template('dao_method_templates.html', **param)
+    create_java_file(param['class_name'] + 'Dao', param['package'] + '.dao', s)
 
 
 # 将首字母转换为小写

@@ -3,7 +3,7 @@ package {{ package }}.ServiceImpl;
 import {{ dao_package }};
 import {{ entity_package }};
 import {{ entity_dto_package }};
-package {{ package }}.service.{{ class_name }};
+import {{ package }}.service.{{ class_name }}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.apache.commons.collections.CollectionUtils;
@@ -22,7 +22,7 @@ public class {{ class_name }}ServiceImpl implements {{ class_name }}Service {
 		Integer page = param.getPage();
 		param.setPage(page != null && page > 0 ? page - 1 : 1);
 		
-		List<{{class_name}}Dto> result = {{ small_class_name }}Mapper.list{{ class_name }}param);
+		List<{{class_name}}Dto> result = {{ small_class_name }}Mapper.list{{ class_name }}(param);
 
         if(CollectionUtils.isEmpty(result)){
             return new ArrayList<>();
