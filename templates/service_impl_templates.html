@@ -20,7 +20,7 @@ public class {{ class_name }}ServiceImpl implements {{ class_name }}Service {
 	public List<{{ class_name }}Dto> list{{ class_name }}({{ class_name }} param) {
 		
 		Integer page = param.getPage();
-		param.setPage(page != null && page > 0 ? page - 1 : 1);
+		param.setPage(page != null && page > 0 ? page.getLimit() * (page - 1) : 0);
 		
 		List<{{class_name}}Dto> result = {{ small_class_name }}Mapper.list{{ class_name }}(param);
 
